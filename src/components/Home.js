@@ -28,7 +28,11 @@ class Home extends React.Component {
               padding: 20,
             }}
           >
-            <h1>Rocket Window</h1>
+            <h1
+              style={{
+                letterSpacing: '6px',
+              }}
+            >Rocket Window</h1>
           </div>
 
           <div

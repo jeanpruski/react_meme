@@ -6,7 +6,6 @@
 }
 
 body {
-  filter: hue-rotate(3deg);
   overflow: hidden;
   background-image: url(../src/img/bg.svg);
   background-repeat: no-repeat;

@@ -29,7 +29,11 @@ class Secondary extends React.Component {
               padding: 20,
             }}
           >
-            <h1>Dino Window</h1>
+            <h1
+              style={{
+                letterSpacing: '6px',
+              }}
+            >Dino Window</h1>
           </div>
 
 

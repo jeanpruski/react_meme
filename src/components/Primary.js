@@ -28,7 +28,11 @@ class Secondary extends React.Component {
               padding: 20,
             }}
           >
-            <h1>Pepe Window</h1>
+            <h1
+              style={{
+                letterSpacing: '6px',
+              }}
+            >Pepe Window</h1>
           </div>
 
 
