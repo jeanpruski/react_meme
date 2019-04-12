@@ -4,6 +4,9 @@ import Primary from './components/Primary';
 import Secondary from './components/Secondary';
 import Lateral from './components/core/Lateral';
 import styled from 'styled-components';
+import Api from '../src/utils/Api';
+
+
 
 
 const ContainerGlobal = styled.div`
@@ -23,15 +26,20 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      // window a mettre a 0
       window: 0,
+      memes:[],
       styleW1: {
         backgroundColor: "#ffbac1",
         position: 'absolute',
         height: '90%',
-        opacity: 0.9,
+        opacity: 0.87,
         zIndex: 100,
         width: '80%',
         left: '10%',
+        // Opacity a mettre a 0
+        opacity: 0,
+        // Scale a mettre a 0
         transform: 'scale(0)',
       },
       styleW2: {
@@ -65,6 +73,16 @@ class App extends Component {
     this.onClickW3 = this.onClickW3.bind(this);
   }
 
+  async componentDidMount(){
+
+      const memes = await Api.getHome();
+      this.setState({
+          memes : memes.data.memes
+      })
+      // console.log(this.state.memes)
+
+  }
+
 
   onClickW1() {
     this.setState({
@@ -73,7 +91,7 @@ class App extends Component {
         backgroundColor: "#ffbac1",
         position: 'absolute',
         height: '90%',
-        opacity: 0.9,
+        opacity: 0.87,
         zIndex: 100,
         width: '80%',
         left: '10%',
@@ -124,7 +142,7 @@ class App extends Component {
           backgroundColor: "#ceffd3",
           position: 'absolute',
           height: '90%',
-          opacity: 0.9,
+          opacity: 0.87,
           zIndex: 100,
           width: '80%',
           left: '10%',
@@ -176,7 +194,7 @@ class App extends Component {
         backgroundColor: "#cee5ff",
         position: 'absolute',
         height: '90%',
-        opacity: 0.9,
+        opacity: 0.87,
         zIndex: 100,
         width: '80%',
         left: '10%',
@@ -191,10 +209,11 @@ class App extends Component {
 
         <Container >
 
-          <Home  windowDisplay={this.state.window} style={this.state.styleW1}/>
+          <Home  memes={this.state.memes} windowDisplay={this.state.window} style={this.state.styleW1}/>
           <Primary  windowDisplay={this.state.window} style={this.state.styleW2}/>
           <Secondary  windowDisplay={this.state.window} style={this.state.styleW3}/>
         </Container>
+        <div id="gradient"></div>
       </ContainerGlobal>
     );
   }

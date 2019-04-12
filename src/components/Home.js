@@ -1,4 +1,5 @@
 import React from 'react';
+import Gallery from '../components/Gallery';
 // import styled from 'styled-components';
 
 class Home extends React.Component {
@@ -31,6 +32,7 @@ class Home extends React.Component {
           </div>
 
           <div
+          className="scrollpink"
           style={{
             height: '100%',
             backgroundColor: 'white',
@@ -38,6 +40,7 @@ class Home extends React.Component {
             borderBottomRightRadius: 20,
             boxShadow: '0 -2px 0px darkgrey',
             padding: 20,
+            overflow: 'scroll',
             // display: 'flex',
             // justifyContent: 'flex-end',
             // alignItems: 'center',
@@ -62,8 +65,22 @@ class Home extends React.Component {
                   fontStyle: 'normal',
                   color: '#50C450',
                 }}
-              > Pepe the frog</em>.
+              > Pepe the frog  </em> 🐸.
           </h5>
+
+          <hr
+            style={{
+              marginTop: 20,
+              opacity: 0.5,
+              height:1,
+              backgroundColor: 'lightgrey',
+            }}
+          />
+
+          {/* Début de l'affichage des memes */}
+                <Gallery 
+                  meme={this.props.memes} />
+          {/* Fin de l'affichage des memes */}
 
           </div>
 

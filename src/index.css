@@ -46,3 +46,103 @@ h1 {
   text-shadow: 2px 2px 3px grey;
   font-family: 'Muli', sans-serif;
 }
+
+#gradient {
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  background-image: linear-gradient(rgba(255,255,255,0), lightgrey);
+  bottom: 0;
+  z-index: 1001;
+}
+
+.imgList {
+  transform: scale(2);
+  transition: all 0.4s;
+  cursor:pointer;
+}
+
+.imgList:hover {
+  transform: scale(1);
+  background-color: grey;
+}
+
+.imgListHover {
+  background-color: lightgrey;
+  box-shadow: 0 0 10px rgba(150, 150, 150, 0.9);
+
+}
+
+.imgListHover:hover {
+  transform: scale(1.03);
+  background-color: rgba(255,193,195, 0.5);
+  box-shadow: 0 0 20px darkgrey;
+}
+
+.mdr:hover p {
+  transform: scale(1.05) translateY(7px);
+}
+
+.lolgradient {
+  background-image: linear-gradient(rgba(255, 255, 255, 0), grey);
+}
+
+.canvas {
+  background-image: linear-gradient(white, lightgrey);
+}
+
+#save {
+  position: absolute;
+  transform: rotate(-5deg);
+  right: -40px;
+  top: 10px;
+  width: 100px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: #d3e6ff;
+  border: 2px solid darkgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+#save:hover {
+  transform: scale(1.2);
+  opacity: 0.7;
+  box-shadow: 0 0 10px grey;
+}
+
+
+/* Let's get this party started */
+.scrollpink::-webkit-scrollbar {
+  opacity: 1;
+}
+
+/* Handle */
+.scrollpink::-webkit-scrollbar-thumb {
+  background: rgba(200,0,0,0.1); 
+  opacity: 0.7;
+}
+/* Let's get this party started */
+.scrollgreen::-webkit-scrollbar {
+  opacity: 1;
+}
+
+/* Handle */
+.scrollgreen::-webkit-scrollbar-thumb {
+  background: rgba(0,200,0,0.1); 
+  opacity: 0.6;
+}
+/* Let's get this party started */
+.scrollblue::-webkit-scrollbar {
+  opacity: 1;
+}
+
+/* Handle */
+.scrollblue::-webkit-scrollbar-thumb {
+  background: rgba(0,0,200,0.1); 
+  opacity: 0.5;
+}
+
