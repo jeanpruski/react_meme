@@ -15,6 +15,7 @@ class Gallery extends React.Component {
 
     const memeList = this.props.meme.map((meme, index) => 
       <div key={index}
+        onClick = {() => this.props.onClickFn(meme.url)}
         className="mdr"
         style={{
           marginTop: 30,
@@ -34,6 +35,7 @@ class Gallery extends React.Component {
           }}
         >
           <img 
+            alt="meme"
             src={meme.url}
             className="imgList"
             style={{

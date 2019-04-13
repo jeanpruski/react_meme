@@ -84,6 +84,7 @@ class Secondary extends React.Component {
 
           {/* Début de l'affichage des memes */}
                 <Editor 
+                  selectedMeme={this.props.memePic}
                   meme={this.props.memes} />
           {/* Fin de l'affichage des memes */}
 

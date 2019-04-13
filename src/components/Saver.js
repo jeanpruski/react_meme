@@ -23,7 +23,7 @@ class Editor extends React.Component {
           }}
         >
           <div
-          id="save">💾</div>
+          id="save"><span role='img' aria-label="save">💾</span></div>
         </div>
 
       </div>

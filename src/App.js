@@ -6,7 +6,7 @@ import Lateral from './components/core/Lateral';
 import styled from 'styled-components';
 import Api from '../src/utils/Api';
 
-
+import logo from './img/bg2.svg';
 
 
 const ContainerGlobal = styled.div`
@@ -29,11 +29,11 @@ class App extends Component {
       // window a mettre a 0
       window: 0,
       memes:[],
+      selectedMeme: logo,
       styleW1: {
         backgroundColor: "#ffbac1",
         position: 'absolute',
         height: '90%',
-        opacity: 0.87,
         zIndex: 100,
         width: '80%',
         left: '10%',
@@ -71,6 +71,7 @@ class App extends Component {
     this.onClickW1 = this.onClickW1.bind(this);
     this.onClickW2 = this.onClickW2.bind(this);
     this.onClickW3 = this.onClickW3.bind(this);
+    this.selectMeme = this.selectMeme.bind(this);
   }
 
   async componentDidMount(){
@@ -82,6 +83,7 @@ class App extends Component {
       // console.log(this.state.memes)
 
   }
+
 
 
   onClickW1() {
@@ -202,17 +204,74 @@ class App extends Component {
     });
   }
 
+  selectMeme(picMeme) {
+    this.setState({
+      selectedMeme: picMeme,
+      styleW1: {
+        backgroundColor: "#ffbac1",
+        position: 'absolute',
+        height: '100%',
+        left: '60%',
+        top: 0,
+        zIndex: 1,
+        width: '40%',
+        opacity: 0.4,
+        transform: 'scale(0.8)',
+        filter: 'blur(1px)'
+        },
+        styleW2: {
+          backgroundColor: "#ceffd3",
+          position: 'absolute',
+          height: '90%',
+          opacity: 0.87,
+          zIndex: 100,
+          width: '80%',
+          left: '10%',
+        },
+        styleW3: {
+          backgroundColor: "#cee5ff",
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          zIndex: 1,
+          width: '40%',
+          opacity: 0.4,
+          height: '100%',
+          transform: 'scale(0.8)',
+          filter: 'blur(1px)'
+        },
+    });
+  }
+
   render() {
+
     return (
       <ContainerGlobal>
+
         <Lateral onClickW1={this.onClickW1} onClickW2={this.onClickW2} onClickW3={this.onClickW3} />
 
         <Container >
 
-          <Home  memes={this.state.memes} windowDisplay={this.state.window} style={this.state.styleW1}/>
-          <Primary  windowDisplay={this.state.window} style={this.state.styleW2}/>
-          <Secondary  windowDisplay={this.state.window} style={this.state.styleW3}/>
+          <Home
+            onClickFn={this.selectMeme}
+            memes={this.state.memes}
+            windowDisplay={this.state.window}
+            style={this.state.styleW1}
+          />
+
+          <Primary
+            memePic={this.state.selectedMeme}
+            windowDisplay={this.state.window}
+            style={this.state.styleW2}
+          />
+
+          <Secondary
+            windowDisplay={this.state.window}
+            style={this.state.styleW3}
+          />
+
         </Container>
+
         <div id="gradient"></div>
       </ContainerGlobal>
     );

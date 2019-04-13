@@ -3,6 +3,7 @@
   padding: 0;
   transition: all 1s;
   font-family: 'Muli', sans-serif;
+  color: grey;
 }
 
 body {
@@ -145,3 +146,48 @@ h1 {
   opacity: 0.5;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+}
+
+form input:nth-child(2) {
+  background-color: white;
+  width: 80%;
+  height: 25px;
+  border: 2px solid lightgrey;
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+form input:last-child {
+  font-family: arial;
+  width: 37px;
+  height: 50px;
+  border-radius: 30px;
+  color: white;
+  background-color: rgba(255,255,255,0);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 25px;
+  transform: rotate(10deg);
+}
+
+form input:last-child:hover {
+  transform: scale(1.6);
+  opacity: 0.8
+}
+.quoteAbsolute {
+  position: absolute;
+  text-align: center;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px white;
+}

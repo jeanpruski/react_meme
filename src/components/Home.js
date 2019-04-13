@@ -83,6 +83,7 @@ class Home extends React.Component {
 
           {/* Début de l'affichage des memes */}
                 <Gallery 
+                  onClickFn={this.props.onClickFn}
                   meme={this.props.memes} />
           {/* Fin de l'affichage des memes */}
 
