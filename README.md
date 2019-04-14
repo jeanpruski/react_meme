@@ -7,7 +7,7 @@
 ```
 Cette dernière nous permet de :
 
-► Sélectionner un template de meme parmis les 100 plus populaire.
+► Sélectionner un template de meme parmis les 100 plus populaires.
 ► Ajouter, supprimer ou redimensionner du texte.
 ► Sauvegarder sa création pour la partager !
 ```
